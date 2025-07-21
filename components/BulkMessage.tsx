@@ -475,18 +475,21 @@ export default function BulkMessage() {
         <div className="space-y-6">
           {/* Progress Bar */}
           {loading && (
-            <Card>
+            <Card className="border-l-4 border-l-[#075E54]">
               <CardContent className="pt-6">
-                <div className="space-y-3">
-                  <div className="flex justify-between text-sm">
-                    <span>İlerleme</span>
-                    <span>0%</span>
+                <div className="space-y-4">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-[#075E54] rounded-full animate-pulse"></div>
+                      <span className="text-sm font-medium text-gray-700">Mesajlar gönderiliyor...</span>
+                    </div>
+                    <span className="text-sm font-semibold text-[#075E54]">0%</span>
                   </div>
-                  <Progress value={0} className="h-3" />
-                  <div className="flex justify-between text-xs text-gray-600">
-                    {/* currentSendingIndex and estimatedTimeLeft are removed */}
+                  <Progress value={0} className="h-2" />
+                  <div className="flex justify-between text-xs text-gray-500">
+                    <span>Başlatıldı</span>
+                    <span>Lütfen bekleyin</span>
                   </div>
-                  {/* isPaused and togglePause are removed */}
                 </div>
               </CardContent>
             </Card>
